@@ -1,0 +1,9 @@
+ROUTE_NO,LOCATION_NAME,LAT,LONG,ID,TIME
+1,Spicer Hall on Spicer,41.073326,-81.506195,48,5.3
+2,Honors College,41.077354,-81.511337,59,3.3
+3,Quaker for Dave's,41.081734,-81.514427,72,2.9
+4,The Creamery,41.07415,-81.516335,7,5.3
+5,South Residence Hall,41.073158,-81.514931,38,2.3
+6,Sherman and Thornton,41.066078,-81.516487,17,3
+7,Power and Allyn,41.068684,-81.5131,71,1.9
+8,Dave's Supermarket,41.071636,-81.492989,60,5.6

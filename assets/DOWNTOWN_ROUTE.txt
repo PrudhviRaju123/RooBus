@@ -1,0 +1,20 @@
+ROUTE_NO,LOCATION_NAME,LAT,LONG,ID,TIME
+1,Honors College,41.077354,-81.511337,59,1.4
+2,Quaker Square on Bowery,41.080647,-81.516579,35,6.5
+3,Canal Park,41.077435,-81.521561,36,2.9
+4,High St.,41.075253,-81.521492,37,2.4
+5,The Depot,41.074604,-81.520309,8,1.8
+6,The Creamery,41.07415,-81.516335,7,1.8
+7,South Residence Hall,41.073158,-81.514931,38,0.8
+8,Sherman and Wheeler,41.070534,-81.516563,39,1.5
+9,University Commons,41.066677,-81.516502,16,1.5
+10,Sherman and Voris,41.063942,-81.516502,41,1.5
+11,Allyn St.,41.06514,-81.513458,42,2.2
+12,Allyn and Cross,41.067383,-81.513412,14,1
+13,Allyn and Power,41.069546,-81.513397,44,1.2
+14,Allyn and Wheeler,41.070778,-81.513382,45,0.4
+15,Allyn and Exchange,41.072514,-81.512619,46,1
+16,Campus Book Store,41.071106,-81.507614,47,1.6
+17,Spicer Hall on Spicer,41.073326,-81.506195,48,1.1
+18,East Campus Parking Deck on Spicer,41.075886,-81.506058,49,1.2
+19,Fir Hill and Buchtel,41.077274,-81.507652,50,1.1

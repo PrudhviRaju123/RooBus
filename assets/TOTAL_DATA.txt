@@ -1,0 +1,70 @@
+ID,LOCATION_NAME,LAT,LONG
+1,Student Union,41.075310,-81.513008 
+2,Quaker Square,41.081341,-81.515839 
+4,Polsky Building,41.078583,-81.519241 
+5,22 Exchange apts.,41.075920,-81.521049 
+6,401 Lofts,41.074783,-81.521904 
+7,The Creamery,41.074150,-81.516335 
+8,The Depot,41.074604,-81.520309 
+9,Gallucci,41.073032,-81.516403 
+10,University Edge,41.072723,-81.512604 
+11,Buchtel Field,41.070374,-81.509811 
+12,Crouse and Spicer,41.069889,-81.507294 
+13,Brown and Tyner,41.067139,-81.509926 
+14,Allyn and Cross,41.067383,-81.513412 
+15,Wheeler and Sumner,41.070675,-81.514626 
+16,University Commons,41.066677,-81.516502 
+17,Sherman and Thornton,41.066078,-81.516487 
+18,RKP Metro RTA Transit Center,41.069405,-81.522629 
+19,Wolf Ledges,41.077003,-81.516319 
+20,Fir Hill,41.079807,-81.507217 
+21,Adolph and Buchtel,41.076923,-81.502655 
+22,JAR,41.075378,-81.508820 
+23,Spicer Hall,41.073486,-81.506874 
+24,InfoCision Stadium,41.072662,-81.509758 
+25,South Campus Parking Deck,41.074245,-81.515999 
+26,CAS,41.077763,-81.511024 
+27,Quaker Square on Mill,41.081631,-81.514305 
+28,Buchtel and West,41.076504,-81.500877 
+29,Velvel Arms apt.,41.076550,-81.498909 
+30,East Market and Buchtel,41.076572,-81.497658 
+31,East Market and Carroll,41.075397,-81.496651 
+32,Beaver and Carroll,41.075367,-81.499702 
+33,Carroll St.,41.075390,-81.503296 
+34,East Campus Parking Deck,41.075371,-81.505386 
+35,Quaker Square on Bowery,41.080647,-81.516579 
+36,Canal Park,41.077435,-81.521561 
+37,High St.,41.075253,-81.521492 
+38,South Residence Hall,41.073158,-81.514931 
+39,Sherman and Wheeler,41.070534,-81.516563 
+40,Sherman and Cross,41.067268,-81.516472 
+41,Sherman and Voris,41.063942,-81.516502 
+42,Allyn St.,41.065140,-81.513458 
+44,Allyn and Power,41.069546,-81.513397 
+45,Allyn and Wheeler,41.070778,-81.513382 
+46,Allyn and Exchange,41.072514,-81.512619 
+47,Campus Book Store,41.071106,-81.507614 
+48,Spicer Hall on Spicer,41.073326,-81.506195 
+49,East Campus Parking Deck on Spicer,41.075886,-81.506058 
+50,Fir Hill and Buchtel,41.077274,-81.507652 
+51,Akron Public Library,41.083385,-81.516335 
+52,Howe Plaza,41.117092,-81.480057 
+53,Cinema,41.110302,-81.471306 
+54,Chapel Hill Mall,41.112728,-81.469597 
+55,Target,41.120399,-81.477539 
+56,High and Exchange,41.076183,-81.520851 
+57,Exchange and Broadway,41.075535,-81.519974 
+58,Exchange and Main,41.076656,-81.522118 
+59,Honors College,41.077354,-81.511337 
+60,Dave's Supermarket,41.071636,-81.492989 
+61,Palmyra and Grant,41.067371,-81.518059 
+63,Power and Kling,41.068691,-81.511902 
+64,Cross and Brown,41.067463,-81.510185 
+65,Wheeler and Brown,41.070641,-81.510033 
+66,Wheeler and Kling,41.070633,-81.511681 
+67,Wheeler and Allyn,41.070648,-81.513008 
+68,Wheeler and Sumner,41.070675,-81.514595 
+69,Wheeler and Grant,41.072266,-81.518456 
+70,Grant,41.071232,-81.517624 
+71,Power and Allyn,41.068684,-81.513100 
+72,Quaker for Dave's,41.081734,-81.514427

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+
+var directionsDisplay = [];
+var directionsService = [];
+var map = null;
+
+    var bus_image = new google.maps.MarkerImage("https://maps.google.com/mapfiles/kml/shapes/bus.png",null,null,new google.maps.Point(0, 0),new google.maps.Size(15, 15));
+    var dest = new google.maps.MarkerImage(" http://maps.google.com/intl/en_us/mapfiles/ms/micons/green.png",null,null,new google.maps.Point(0, 0),new google.maps.Size(15, 15));
+	var man_image = new google.maps.MarkerImage("https://maps.google.com/mapfiles/kml/shapes/man.png",null,null,new google.maps.Point(0, 0), new google.maps.Size(20, 20));
+
+function calcRoute(msg) {
+  //var msg = "41.077354,-81.511337:41.080647,-81.516579:41.077435,-81.521561:41.075253,-81.521492:41.074604,-81.520309:41.07415,-81.516335:41.073158,-81.514931:41.070534,-81.516563:41.066677,-81.516502:41.063942,-81.516502:41.06514,-81.513458:41.067383,-81.513412:41.069546,-81.513397:41.070778,-81.513382:41.072514,-81.512619:41.071106,-81.507614:41.073326,-81.506195:41.075886,-81.506058:41.077274,-81.507652:41.077354,-81.511337:41.077354,-81.511337";
+  //var msg="14:1:41.06982989999999,-81.5129985:41.0756231,-81.5124345:41.077354,-81.511337:41.080647,-81.516579:41.077435,-81.521561:41.075253,-81.521492:41.074604,-81.520309:41.07415,-81.516335:41.073158,-81.514931:41.070534,-81.516563:41.066677,-81.516502:41.063942,-81.516502:41.06514,-81.513458:41.067383,-81.513412:41.069546,-81.513397:41.070778,-81.513382:41.072514,-81.512619:41.071106,-81.507614:41.073326,-81.506195:41.075886,-81.506058:41.077274,-81.507652:41.077354,-81.511337";
+
+  
+  var input_msg = msg.split("|");
+  
+  var locations = new Array();
+  var bounds = new google.maps.LatLngBounds();
+  var latlngbounds = new google.maps.LatLngBounds();
+  map = new google.maps.Map(document.getElementById('dvMap'), mapOptions);
+  map.fitBounds(bounds);
+    for (var i = 2; i < input_msg.length; i++) {
+        var tmp_lat_lng = input_msg[i].split(",");
+
+	    if( i==2 ) {            
+		        var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(tmp_lat_lng[0], tmp_lat_lng[1]),
+                map: map,
+				icon: man_image
+            }); }
+			
+	 if( i==3 ) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(tmp_lat_lng[0], tmp_lat_lng[1]),
+                map: map,
+				icon: dest
+            }); }	
+		  if(i>=4){
+		        locations.push(new google.maps.LatLng(tmp_lat_lng[0], tmp_lat_lng[1]));
+				bounds.extend(locations[locations.length-1]);
+			    var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(tmp_lat_lng[0], tmp_lat_lng[1]),
+                map: map,
+				icon: bus_image		
+                });
+			             
+			}
+			
+        latlngbounds.extend(marker.position);
+    }
+
+    var mapOptions = {
+        center: locations[0],
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+   
+
+  var i = locations.length;
+  var index = 0;
+
+  while (i != 0) {
+
+    if (i < 3) {
+      var tmp_locations = new Array();
+      for (var j = index-2; j < locations.length; j++) {
+        tmp_locations.push(locations[j]);
+      }
+      drawRouteMap(tmp_locations);
+      i = 0;
+      index = locations.length;
+    }
+
+    if (i >= 3 && i <= 10) {
+  
+      var tmp_locations = new Array();
+      for (var j = index; j < locations.length; j++) {
+        tmp_locations.push(locations[j]);
+      }
+      drawRouteMap(tmp_locations);
+      i = 0;
+      index = locations.length;
+      console.log("after fun < 10: i value " + i + " index value" + index);
+    }
+
+    if (i > 10) {
+      //console.log("before :fun > 10: i value " + i + " index value" + index);
+      var tmp_locations = new Array();
+      for (var j = index; j < index + 10; j++) {
+        tmp_locations.push(locations[j]);
+      }
+      drawRouteMap(tmp_locations);
+      i = i - 9;
+      index = index + 9;
+      //console.log("after fun > 10: i value " + i + " index value" + index);
+    }
+  }
+  /*--------walking distance ------------*/
+  
+  
+  console.log("input msg length"+input_msg.length);
+  console.log("tmp loc ");
+  var tmp_loc = input_msg[eval(parseInt(input_msg[0])+3)].split(",");
+  var near_bus_loc = new google.maps.LatLng(tmp_loc[0], tmp_loc[1]);
+  
+       tmp_loc = input_msg[2].split(",");
+  var stdg_loc = new google.maps.LatLng(tmp_loc[0], tmp_loc[1]);
+  
+       tmp_loc = input_msg[3].split(",");
+  var dest_loc = new google.maps.LatLng(tmp_loc[0], tmp_loc[1]);
+    
+            tmp_loc = input_msg[eval(parseInt(input_msg[1])+3)].split(",");
+  var near_dest_loc = new google.maps.LatLng(tmp_loc[0], tmp_loc[1]);
+  
+   var start=stdg_loc;
+   var end  =near_bus_loc;
+   WalkRouteMap(start,end);
+   console.log("call for walking route"+stdg_loc+"----"+near_bus_loc);
+   
+   var start=dest_loc;
+   var end  =near_dest_loc;
+   WalkRouteMap(start,end);
+   console.log("call for walking route"+stdg_loc+"----"+near_bus_loc);
+}
+
+
+function WalkRouteMap(start,end) {
+  
+  
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.WALKING
+  };
+  console.log(request);
+  drservice(request,'#FF0000' ,5);
+}
+
+
+function drawRouteMap(locations) {
+
+  var start, end;
+  var waypts = [];
+
+  for (var k = 0; k < locations.length; k++) {
+    if (k >= 1 && k <= locations.length - 2) {
+      waypts.push({
+        location: locations[k],
+        stopover: true
+      });
+    }
+	    if (k == 0) 
+		start = locations[k];
+
+    if (k == locations.length - 1) 
+	end = locations[k];
+
+  }
+  var request = {
+    origin: start,
+    destination: end,
+    waypoints: waypts,
+	
+	    travelMode: google.maps.TravelMode.DRIVING
+  };
+  console.log(request);
+
+  drservice(request,'#3300FF',3);
+}
+
+function drservice(request,polycolor,strokeweight)
+{
+  directionsService.push(new google.maps.DirectionsService());
+  var instance = directionsService.length - 1;
+  directionsDisplay.push(new google.maps.DirectionsRenderer({
+    preserveViewport: true,
+	suppressMarkers: true,
+    suppressInfoWindows: true,
+	polylineOptions:{strokeColor:polycolor ,strokeWeight :strokeweight }
+	
+	  }));
+  directionsDisplay[instance].setMap(map);
+  directionsService[instance].route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      console.log(status);
+      directionsDisplay[instance].setDirections(response);
+    }
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', calcRoute);
+
+</script>
+<div id="dvMap" style="width: 600px; height: 600px"></div>
+</body>
+</html>

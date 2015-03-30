@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"RooBus APP "</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    
+    <string-array name="res_bus_list_array">
+        <item>Chapel Route</item>
+        <item>Daves Route</item>
+        <item>Downtown Route</item>
+        <item>NorthEast Route</item>
+        <item>South Route</item>
+        <item>West Route</item>
+        <item>Weekend Route</item>
+    </string-array>
+
+</resources>
