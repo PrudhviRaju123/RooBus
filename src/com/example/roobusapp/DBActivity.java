@@ -16,7 +16,7 @@ public class DBActivity extends SQLiteOpenHelper {
 
     private static final String Database_Name = "RooBus.db";
     private static final String create_tab_bus_table = "CREATE TABLE IF NOT EXISTS BUS_TABLE ( BUS_NAME TEXT PRIMARY KEY NOT NULL ,BUS_CODE  TEXT NOT NULL , BUS_ST_TIME TEXT NOT NULL , BUS_END_TIME TEXT NOT NULL , WEEK_DAY INTEGER NOT NULL,SAT INTEGER NOT NULL,SUN INTEGER NOT NULL)";
-    
+
     private static final String total_data ="CREATE TABLE IF NOT EXISTS TOTAL_DATA (ID INTEGER PRIMARY KEY NOT NULL ,LOCATION_NAME TEXT  NOT NULL , LAT REAL NOT NULL , LONG REAL NOT NULL)";
     private static final int DATABASE_VERSION = 5;
     private Context context;
@@ -57,7 +57,6 @@ public class DBActivity extends SQLiteOpenHelper {
         try {
             // SQLiteDatabase sqllitedb =dbActivity.getWritableDatabase();
             BufferedReader br = new BufferedReader(new InputStreamReader(context.getAssets().open(txt_file)));
-            // storing the value of length of the first line of maze
             String curr_line =br.readLine();
             String column_data[] = curr_line.split(",");
             while ((curr_line = br.readLine()) != null) {
